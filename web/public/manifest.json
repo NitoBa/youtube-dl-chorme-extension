@@ -5,7 +5,7 @@
   "description": "The extension to download a YouTube videos",
   "action": {
     "default_popup": "index.html",
-    "default_icon": "vite.svg"
+    "default_icon": "icon.png"
   },
   "permissions": ["tabs", "activeTab", "storage"]
 }

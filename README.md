@@ -1,1 +1,1 @@
-# Youtube downloder extension for Google Chrome
+# Youtube downloader extension for Google Chrome
