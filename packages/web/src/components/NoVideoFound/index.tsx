@@ -1,18 +1,25 @@
 import { MagnifyingGlass, Warning } from 'phosphor-react'
-import { FormEvent, useRef } from 'react'
+import { FormEvent, useRef, useState } from 'react'
 import { useVideo } from '../../contexts/video'
 import { Button } from '../Button'
 
 export function NoVideoFound() {
   const inputRef = useRef<HTMLInputElement>(null)
   const { getVideoInfoFromSearch } = useVideo()
+  const [isInvalid, setIsInvalid] = useState(false)
 
   const handleSearchVideo = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    setIsInvalid(false)
+    const regex =
+      /(?:.+?)?(?:\/v\/|watch\/|\?v=|\\&v=|youtu\.be\/|\/v=|^youtu\.be\/|watch\\%3Fv\\%3D)([a-zA-Z0-9_-]{11})+/
+
     const videoUrl = inputRef.current?.value
-    if (videoUrl) {
-      getVideoInfoFromSearch(videoUrl)
+    if (!videoUrl?.match(regex)) {
+      setIsInvalid(true)
+      return
     }
+    getVideoInfoFromSearch(videoUrl!)
   }
 
   return (
@@ -58,6 +65,11 @@ export function NoVideoFound() {
         transition-all
         "
       />
+      {isInvalid && (
+        <small className="text-red-400 text-[1.4rem]">
+          Endereço invalido: por favor utilize um link do youtube
+        </small>
+      )}
       <Button
         type="submit"
         title="Buscar"
