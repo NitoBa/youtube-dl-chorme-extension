@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: calc(100vw / 450 * 10);
+  }
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  @apply bg-gray-500 text-black w-[450px];
+}

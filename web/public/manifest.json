@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Youtube Downloader",
+  "version": "1.0.0",
+  "description": "The extension to download a YouTube videos",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "vite.svg"
+  },
+  "permissions": ["tabs", "activeTab", "storage"]
+}
