@@ -1,0 +1,24 @@
+{
+  "name": "youtube-downloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "cd packages/server && node dist/server.js",
+    "build:server": "cd packages/server && npm install && npm run build",
+    "build:web": "cd packages/web && npm run build",
+    "dev:web": "cd packages/web && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NitoBa/youtube-dl-chorme-extension.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NitoBa/youtube-dl-chorme-extension/issues"
+  },
+  "homepage": "https://github.com/NitoBa/youtube-dl-chorme-extension#readme"
+}
